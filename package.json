@@ -1,11 +1,10 @@
 {
   "name": "paths-manager",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "easily save and find important files in your project",
   "main": "paths-manager.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "save": "node ./save-paths.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -16,13 +15,9 @@
     "manager",
     "paths-manager"
   ],
-  "author": "Nabil",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Nabil-Alsaiad/paths-manager/issues"
+  "author": {
+    "name": "Nabil Alsaiad",
+    "url": "https://discord.gg/cp8XsStTCp"
   },
-  "homepage": "https://github.com/Nabil-Alsaiad/paths-manager#readme",
-  "devDependencies": {
-    "eslint": "^8.23.1"
-  }
+  "license": "MIT"
 }

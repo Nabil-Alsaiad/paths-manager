@@ -1,36 +1,19 @@
-const { getPathObj } = require('./paths-manager-utils.js');
+const moduleFolderName = 'my_modules';
 
-const savePathsOfFolders = (mainFolders) => {
-    if (!Array.isArray(mainFolders)) throw new Error('Expecting "mainFolders" as array of folders as strings');
-    const { writeFileSync } = require('node:fs');
-    const dataFilePath = './all-paths.json';
+const pathsSaver = require(`./${moduleFolderName}/paths-utillities.js`);
+const pathFinder = require(`./${moduleFolderName}/path-finder.js`);
+const pathsFinder = require(`./${moduleFolderName}/paths-finder.js`);
 
-    const allPaths = {};
-    mainFolders.forEach(folder => {
-        //FIXME: This must be the actual workspace directoryPath
-        allPaths[folder] = getPathObj(__dirname, folder);
-    });
-
-    // console.log(`allPaths: ${allPaths}`);
-
-    let jsonValue = '';
-    try {
-        jsonValue = JSON.stringify(allPaths, null, 2);
-    } catch (e) {
-        console.error(e);
-    }
-
-    // console.log(`jsonValue: ${jsonValue}`);
-
-    if (jsonValue.length > 0) {
-        writeFileSync(dataFilePath, jsonValue);
-    } else {
-        console.error('jsonValue is null');
-    }
-
-    console.log(`done saving all paths inside [${mainFolders}]`);
-};
+// TODO: Save all project main folder paths
+// TODO: Get paths file path
+// TODO: Clear all paths in file
+// TODO: Clear some paths in the file
+// TODO: Save paths in separate files
+// FIXME: differentiate between files with same name but different root path
+// FIXME: Save paths file in good place
 
 module.exports = {
-    savePathsOfFolders,
+    pathsSaver,
+    pathFinder,
+    pathsFinder,
 };

@@ -1,11 +1,17 @@
-const getPathObj = (somePath, folderName) => {
-    const { readdirSync } = require('node:fs');
-    const { join } = require('node:path');
+const { readdirSync } = require('node:fs');
+const { join } = require('node:path');
 
+//#region file path
+let myPath = __dirname;
+const index = myPath.indexOf('node_modules');
+if (index !== -1) myPath = myPath.substring(0, index);
+
+const dataFilePath = join(myPath, 'all-paths.json');
+//#endregion
+
+const getPathObj = (somePath, folderName) => {
     const aPath = join(somePath, folderName);
     const children = readdirSync(aPath);
-    // console.log(`aPath: ${aPath}`);
-    // console.log(`children.length: ${children.length}`);
 
     let isFilesDirectory = false;
     for (const file of children) {
@@ -15,7 +21,6 @@ const getPathObj = (somePath, folderName) => {
         }
     }
 
-    // console.log(`isFilesDirectory: ${isFilesDirectory}`);
     if (isFilesDirectory) {
         return children;
     } else {
@@ -32,6 +37,8 @@ const isNotEmptyString = (test) => {
 };
 
 module.exports = {
+    myPath,
+    dataFilePath,
     getPathObj,
     isNotEmptyString,
 };
