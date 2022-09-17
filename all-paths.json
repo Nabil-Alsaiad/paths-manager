@@ -1,0 +1,14 @@
+{
+  "commands": {
+    "moderation": {},
+    "other": {}
+  },
+  "events": {
+    "logs": [
+      "example-1.js"
+    ],
+    "other": [
+      "example-2.js"
+    ]
+  }
+}
