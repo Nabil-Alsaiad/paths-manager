@@ -1,6 +1,6 @@
 {
   "name": "paths-manager",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "easily save and find important files in your project",
   "main": "paths-manager.js",
   "scripts": {

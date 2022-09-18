@@ -1,8 +1,8 @@
 const moduleFolderName = 'my_modules';
 
-const pathsSaver = require(`./${moduleFolderName}/paths-utillities.js`);
-const pathFinder = require(`./${moduleFolderName}/path-finder.js`);
-const pathsFinder = require(`./${moduleFolderName}/paths-finder.js`);
+const { savePathsOfFolders } = require(`./${moduleFolderName}/paths-saver.js`);
+const { getFullPathOf } = require(`./${moduleFolderName}/path-finder.js`);
+const { getAllFilesInFolder, getAllFilesInFolderWithDir } = require(`./${moduleFolderName}/paths-finder.js`);
 
 // TODO: Save all project main folder paths
 // TODO: Get paths file path
@@ -13,7 +13,8 @@ const pathsFinder = require(`./${moduleFolderName}/paths-finder.js`);
 // FIXME: Save paths file in good place
 
 module.exports = {
-    pathsSaver,
-    pathFinder,
-    pathsFinder,
+    savePathsOfFolders,
+    getFullPathOf,
+    getAllFilesInFolder,
+    getAllFilesInFolderWithDir,
 };
