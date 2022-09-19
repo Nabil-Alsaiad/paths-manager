@@ -5,7 +5,7 @@
 </h1>
 
 <div align="center">
-  paths-manager - Sane defaults for your next project!
+  paths-manager
   <br />
   <br />
   <a href="https://github.com/Nabil-Alsaiad/paths-manager/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
@@ -18,7 +18,8 @@
 <div align="center">
 <br />
 
-[![PRs welcome](https://img.shields.io/badge/Pull%20requests-welcome-ff69b4.svg?style=flat-square)](https://github.com/Nabil-Alsaiad/paths-manager/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![PRs welcome](https://img.shields.io/badge/Pull%20requests-welcome%20<3-ff69b4.svg?style=flat-square)](https://github.com/Nabil-Alsaiad/paths-manager/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![PRs welcome](https://img.shields.io/badge/npm-Check%20it%20out-red.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/paths-manager)
 
 </div>
 
