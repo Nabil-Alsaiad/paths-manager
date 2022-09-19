@@ -14,7 +14,7 @@ function getFullPathOf(lookingFor, mainFolder) {
 
     const getPathInside = (name, obj) => {
         const chooseAccordingToType = () => {
-            if (name == lookingFor) return true;
+            if (name === lookingFor) return true;
             if (typeof obj !== 'object') return false;
 
             if (Array.isArray(obj)) {
