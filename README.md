@@ -19,7 +19,7 @@
 <br />
 
 [![PRs welcome](https://img.shields.io/badge/Pull%20requests-welcome%20<3-ff69b4.svg?style=flat-square)](https://github.com/Nabil-Alsaiad/paths-manager/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![PRs welcome](https://img.shields.io/badge/npm-Check%20it%20out-red.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/paths-manager)
+[![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)](https://www.npmjs.com/package/paths-manager)
 
 </div>
 
