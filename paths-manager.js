@@ -1,20 +1,15 @@
-const moduleFolderName = 'my_modules';
+const saver = require('./saver.js');
+const storage = require('./storage.js');
 
-const { savePathsOfFolders } = require(`./${moduleFolderName}/paths-saver.js`);
-const { getFullPathOf } = require(`./${moduleFolderName}/path-finder.js`);
-const { getAllFilesInFolder, getAllFilesInFolderWithDir } = require(`./${moduleFolderName}/paths-finder.js`);
-
-// TODO: Save all project main folder paths
-// TODO: Get paths file path
-// TODO: Clear all paths in file
-// TODO: Clear some paths in the file
-// TODO: Save paths in separate files
-// FIXME: differentiate between files with same name but different root path
-// FIXME: Save paths file in good place
 
 module.exports = {
-    savePathsOfFolders,
-    getFullPathOf,
-    getAllFilesInFolder,
-    getAllFilesInFolderWithDir,
-};
+    // saver.js
+    saveMainFolders: saver.saveMainFolders,
+
+    // storage.js
+    getFilePaths: storage.getFilePaths,
+    getFilePath: storage.getFilePath,
+
+    getFilePathsInFolder: storage.getFilePathsInFolder,
+    getFilePathInFolder: storage.getFilePathInFolder,
+}
