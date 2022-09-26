@@ -1,7 +1,7 @@
 {
   "name": "paths-manager",
-  "version": "0.2.3",
-  "description": "easily save and find important files in your project",
+  "version": "0.3.0",
+  "description": "easily save and find files in your project",
   "main": "paths-manager.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,9 @@
     "url": "git+https://github.com/Nabil-Alsaiad/paths-manager.git"
   },
   "keywords": [
+    "get path",
+    "folder path",
+    "file path",
     "path",
     "manager",
     "paths-manager"

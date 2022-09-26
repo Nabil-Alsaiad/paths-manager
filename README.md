@@ -31,9 +31,6 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Usage](#usage)
-    - [paths-manager template](#paths-manager-template)
-    - [Manual setup](#manual-setup)
-    - [Variables reference](#variables-reference)
 - [Contributing](#contributing)
 - [Support](#support)
 - [License](#license)
@@ -48,25 +45,25 @@
 <tr>
 <td>
 
-Open Source Software is not about the code in the first place but the communications and community. People love good documentation and obvious workflows. If your software solves some problem, but nobody can figure out how to use it or, for example, how to create an effective bug report, there's something very bad going on. Did you hear about Readme Driven Development? Check out the awesome [article written by GitHub co-founder Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
-
-There are many great README or issues templates available on GitHub, however, you have to find them yourself and combine different templates yourself. In addition, if you want extensive docs like CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md or even advanced GitHub features like a pull request template, additional labels, code scanning, and automatic issue/PR closing and locking you have to do much more work. Your time should be focused on creating something **amazing**. You shouldn't be doing the same tasks over and over like creating your GitHub project template from scratch. Follow the **don’t repeat yourself** principle. Use a template **and go create something amazing**!
+Discord bot projects usually maintain a lot of files due to every file being a separate command, event, handler or some data storing json files, so keeping the files organized in tree structure folders like "commands/moderation/admins-only/ban.js", yet keeping track of each file path in order to reference it anywhere inside your commands, for example: if you're making a test command to test the welcome event message rather than kicking and re-joining from another acount it'd be better to have a test command and be somewhere like "commands/tests/event-tests/welcome-test.js" and you want to require the event located at "events/guild/welcome.js" so you can call it from the tets command, you propably would write something like ```const welcome = require('../../../events/guild/welcome.js');``` which will work fine until you move any of the files or change the name of one of their folders and that will break everything, you can just change the path text but if you're doing the same thing for every other command and event you have?, just moving the "commands/tests" folder will require you to change all path texts in all test command files and of course you don't want that, we programmers hate doing repetitive work ourselves so much that's why we made this tool, to help automate this work.
 
 Key features of **paths-manager**:
 
-- Save all folders with all it's folders/files inside
-- Uses json file to store directory parts
-- Find any stored folder/file from anywhere in your project
+- Save all file paths inside a main folder or it's subfolder
+- Get the full path of any stored file from anywhere in your project
+- Get full paths of all stored files within a main folder or it's subfolder
 
 <details open>
 <summary>Additional important info</summary>
 <br>
 
-This tool was designed to serve Discord bot projects where you will need to get a reference to files that might be away from the current directory your in, also the chance of files being moved to another location is very high, so an automatic way to find certian files is needed.
+paths-manager keeps the stored paths in variables, meaning they'll be lost once the project is stopped and you'll need to save the files every time you run it
 
-the tool will use a "all-paths.json" file to store directories in, and it'll be at the same level of the "node_mocules" folder, also the "node_modules" level is concidered the main directiory and the tool will work with only folders at the level and what's inside them, the tool currently doesn't store files at the main directiory, they must be in a main folder, main folder is a folder at the main directiory, one last important thing to note, the tool will treat folders only as folder folders or file folders, no folders containing both folders and files directly, if you have any extra files in a folder with folders in it, concider putting them in a "other" folder.
+paths-manager will auto detect all main folders if non were specified in the save files function.
 
-The tool finding functions will require the extension of the file, when having a file with the same name as an other file, paths-manager will return the first one it finds.
+paths-manager finding functions will require the extension of the file name.
+
+when having a file with the same name as an other file, paths-manager will return the first one it finds.
 
 </details>
 
@@ -89,19 +86,23 @@ Install paths-manager by running the following command in your node.js project:
 npm i paths-manager
 ```
 
+or
+
+```npm
+npm install paths-manager
+```
+
 ### Usage
 
-> Save all your main folders directories at the start of your appication or before
+> Require the paths-manager module like so ```const pathsManager = require('paths-manager');```.
 >
-> use the function "savePathsOfFolders" and give all main folders at the root of your project as an array
+> Save all your main folders files at the beggining of your project.
 >
-> When you want to get the full path of a file that you know it's name, require the package ilke below
+> When you want to get the full path of a file that you know it's name, require the package like before.
 >
-> const paths-manager = require('paths-manager');
+> then use the function for getting a file path, give it the full file name with it's extension like so ```'example.js'```.
 >
-> then use the function "getFullPathOf" give it the full file name with the extension
->
-> if you have a lot of main folders, you can by provid the main folder name as a second optional argument to find the file faster
+> if you have more than one file with the same name then use the function for getting a file path with a folder name it's inside, provide the folder name along with the file name to get the exact one you want.
 
 ## Contributing
 
@@ -126,5 +127,4 @@ Try contacting one of the followings:
 ## License
 
 This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.
-
 See [LICENSE](LICENSE) for more information.
