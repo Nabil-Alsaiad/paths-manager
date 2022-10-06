@@ -5,7 +5,7 @@
 </h1>
 
 <div align="center">
-  paths-manager
+  # paths-manager
   <br />
   <br />
   <a href="https://github.com/Nabil-Alsaiad/paths-manager/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
@@ -18,8 +18,12 @@
 <div align="center">
 <br />
 
-[![PRs welcome](https://img.shields.io/badge/Pull%20requests-welcome%20<3-ff69b4.svg?style=flat-square)](https://github.com/Nabil-Alsaiad/paths-manager/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)](https://www.npmjs.com/package/paths-manager)
+<div align="center">
+  <p>
+    <a href="https://www.npmjs.com/package/paths-manager"><img src="https://img.shields.io/npm/v/paths-manager.svg?maxAge=3600&logo=npm" alt="npm version" /></a>
+    <a href="https://www.npmjs.com/package/paths-manager"><img src="https://img.shields.io/npm/dt/paths-manager.svg?maxAge=3600&logo=npm" alt="npm downloads" /></a>
+  </p>
+</div>
 
 </div>
 
