@@ -1,0 +1,9 @@
+node_modules/
+dist/
+
+.prettierrc
+
+.eslintrc.json
+tslint.json
+tsconfig.json
+package-lock.json

@@ -1,11 +1,15 @@
 {
   "name": "paths-manager",
-  "version": "0.3.0",
+  "version": "0.4.2",
   "description": "easily save and find files in your project",
-  "main": "paths-manager.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
+  "files": [
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nabil-Alsaiad/paths-manager.git"
@@ -22,5 +26,13 @@
     "name": "Nabil Alsaiad",
     "url": "https://discord.gg/cp8XsStTCp"
   },
-  "license": "MIT"
+  "contributors": [
+    {
+      "name": "Snowy"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.8.3"
+  }
 }
