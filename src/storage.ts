@@ -1,39 +1,46 @@
-let filePaths: string[] = [];
-const filePathsObject: any = {};
+const filePaths = new Map();
 
-export function getFilePaths(): string[] {
-  return filePaths;
+export function getFilePaths(): string[] | undefined {
+  return [...filePaths.values()];
 }
 
-export function getFilePath(fileName: string): string {
-  return filePaths[filePathsObject[fileName]];
+export function getFilePath(fileName: string): string | undefined {
+  return filePaths.get(fileName);
 }
 
-export function getFilePathsInFolder(folderName: string): string[] {
-  return filePaths.filter((f: string) => f.includes(folderName));
+export function getFilePathsInFolder(folderName: string): string[] | undefined {
+  const paths = getFilePaths();
+
+  if (paths)
+    return paths.filter((p: string) => p.includes(folderName));
+
+  return undefined;
 }
 
-export function getFilePathInFolder(fileName: string, folderName: string): string | null {
-  for (const filePath of getFilePathsInFolder(folderName)) {
+export function getFilePathInFolder(fileName: string, folderName: string): string | undefined {
+  const paths = getFilePathsInFolder(folderName);
+  if (!paths) return undefined;
+
+  for (const filePath of paths) {
     if (filePath.endsWith(fileName)) return filePath;
   }
-  return null;
+
+  return undefined;
 }
 
 export function setFiles(newFiles: string[]): void {
   function getLastItem(path: string): string {
-    let index: number = path.lastIndexOf('\\');
-    if (index === -1) index = path.lastIndexOf('/');
+    let index: number = path.lastIndexOf("\\");
+    if (index === -1) index = path.lastIndexOf("/");
     return path.substring(index + 1);
-  }
+  };
 
-  filePaths = newFiles;
-  if (filePaths) {
-    for (const filePath in filePaths) {
-      if (filePaths.hasOwnProperty(filePath)) {
-        const fileName: string = getLastItem(filePaths[filePath]);
-        filePathsObject[fileName] = filePath;
-      }
+  for (const filePath of newFiles) {
+    const fileName: string = getLastItem(filePath);
+    if (filePaths.has(fileName)) {
+      console.warn(`Duplicate file name found, paths-manager already have a path with the file name ${fileName}`);
+      continue;
     }
+    filePaths.set(fileName, filePath);
   }
-}
+};

@@ -1,16 +1,17 @@
-import { readdirSync, statSync } from 'fs';
-import { resolve } from 'node:path';
+import { readdirSync, statSync } from "fs";
+import { setFiles } from "./storage.js";
+import { resolve } from "node:path";
 
 const ignoredFolders = [
-  'node_modules',
-  '.git',
-  '.vs',
-  'ignore-me'
+  "node_modules",
+  ".git",
+  ".vs",
+  "ignore-me"
 ]
 
 export async function saveMainFolders(folderNames: string[]) {
   function getMainFolders(): string[] {
-    const index = __dirname.lastIndexOf('node_modules');
+    const index = __dirname.lastIndexOf("node_modules");
     const myPath = __dirname.substring(0, index);
 
     const myFolderNames: string[] = readdirSync(myPath).filter(
@@ -39,6 +40,5 @@ export async function saveMainFolders(folderNames: string[]) {
     files.push(...getAllFilesInFolder(folderName));
   }
 
-  const storage = require('./storage.js');
-  storage.setFiles(files);
+  setFiles(files);
 }
